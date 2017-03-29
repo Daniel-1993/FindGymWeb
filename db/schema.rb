@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170329002936) do
+ActiveRecord::Schema.define(version: 20170329015148) do
+
+  create_table "modalidades", force: :cascade do |t|
+    t.string   "descricao"
+    t.integer  "treinador_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["treinador_id"], name: "index_modalidades_on_treinador_id"
+  end
+
+  create_table "treinadors", force: :cascade do |t|
+    t.string   "nomeProfessor"
+    t.string   "formacao"
+    t.string   "telefone"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "usuarios", force: :cascade do |t|
     t.string   "nome"
