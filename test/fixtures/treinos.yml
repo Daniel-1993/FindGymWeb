@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  usuario: one
+  modalidade: one
+  hora_i: 2017-03-29 09:25:23
+  hora_f: 2017-03-29 09:25:23
+  exercico: MyString
+
+two:
+  usuario: two
+  modalidade: two
+  hora_i: 2017-03-29 09:25:23
+  hora_f: 2017-03-29 09:25:23
+  exercico: MyString

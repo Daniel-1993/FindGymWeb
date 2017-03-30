@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170329015148) do
+ActiveRecord::Schema.define(version: 20170329220448) do
 
   create_table "modalidades", force: :cascade do |t|
     t.string   "descricao"
@@ -28,6 +28,18 @@ ActiveRecord::Schema.define(version: 20170329015148) do
     t.datetime "updated_at",    null: false
   end
 
+  create_table "treinos", force: :cascade do |t|
+    t.integer  "usuario_id"
+    t.integer  "modalidade_id"
+    t.datetime "hora_i"
+    t.datetime "hora_f"
+    t.string   "exercico"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["modalidade_id"], name: "index_treinos_on_modalidade_id"
+    t.index ["usuario_id"], name: "index_treinos_on_usuario_id"
+  end
+
   create_table "usuarios", force: :cascade do |t|
     t.string   "nome"
     t.string   "email"
@@ -35,6 +47,7 @@ ActiveRecord::Schema.define(version: 20170329015148) do
     t.string   "senha"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "foto"
   end
 
 end

@@ -1,0 +1,44 @@
+<%= form_for(treino) do |f| %>
+  <% if treino.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(treino.errors.count, "error") %> prohibited this treino from being saved:</h2>
+
+      <ul>
+      <% treino.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :usuario_id %>
+    <%= f.select :usuario_id, options_for_select(Usuario.all.map {|m|[m.nome, m.id] 
+    }, f.object.usuario_id) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :modalidade_id %>
+    <%= f.select :modalidade_id, options_for_select(Modalidade.all.map {|m|[m.descricao, m.id] 
+    }, f.object.modalidade_id) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hora_i %>
+    <%= f.datetime_select :hora_i %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hora_f %>
+    <%= f.datetime_select :hora_f %>
+  </div>
+
+  <div class="field">
+    <%= f.label :exercico %>
+    <%= f.text_field :exercico %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

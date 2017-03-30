@@ -31,6 +31,12 @@
     <%= f.text_field :senha %>
   </div>
 
+  <div>
+      <%= f.label :foto%>
+      <%= image_tag @usuario.foto_url, class: 'foto' if @usuario.foto? %>
+      <%= f.file_field :foto, label: 'Foto' , input_html: {accept: ('application/jpg') } %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -18,7 +18,8 @@
 
   <div class="field">
     <%= f.label :treinador_id %>
-    <%= f.select :treinador_id, options_for_select(Treinador.all{|m|[m.nomeProfessor, m.id]},f.object.treinador_id)%>
+    <%= f.select :treinador_id, options_for_select(Treinador.all.map {|m|[m.nomeProfessor, m.id] 
+    }, f.object.treinador_id) %>
   </div>
 
   <div class="actions">

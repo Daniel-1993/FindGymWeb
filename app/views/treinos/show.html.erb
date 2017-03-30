@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @treino.usuario %>
+</p>
+
+<p>
+  <strong>Modalidade:</strong>
+  <%= @treino.modalidade %>
+</p>
+
+<p>
+  <strong>Hora i:</strong>
+  <%= @treino.hora_i %>
+</p>
+
+<p>
+  <strong>Hora f:</strong>
+  <%= @treino.hora_f %>
+</p>
+
+<p>
+  <strong>Exercico:</strong>
+  <%= @treino.exercico %>
+</p>
+
+<%= link_to 'Edit', edit_treino_path(@treino) %> |
+<%= link_to 'Back', treinos_path %>
